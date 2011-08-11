@@ -1,0 +1,34 @@
+block b-resume {
+
+    content: [
+        {
+            elem: 'personal-info',
+            person: this.ctx.person
+        },
+        {
+            elem: 'qualification'
+        },
+        {
+            elem: 'skills'
+        },
+        {
+            elem: 'experience'
+        },
+        {
+            elem: 'projects'
+        },
+        {
+            elem: 'online-presense'
+        },
+        {
+            elem: 'education'
+        }
+    ]
+
+    elem personal-info {
+
+        tag: 'h1',
+        content: [ this.ctx.person.firstName, this.ctx.person.lastName ].join(' ')
+
+    }
+}

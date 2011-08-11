@@ -1,15 +1,23 @@
-var Person = {
+var person = {
     firstName: 'Roman',
     lastName: 'Rozhdestvenskiy'
 };
 ({
     block: 'b-page',
-    title: [Person.firstName, Person.lastName, ', CV'],
-    favicon: '//yandex.ru/favicon.ico',
+    title: [person.firstName, person.lastName, ', CV'],
+    favicon: '../../favicon.ico',
     head: [],
-    content: {
-        tag: 'h1',
-        content: 'Personal information'
-    }
+    content: [
+        {
+            block: 'b-head'
+        },
+        {
+            block: 'b-resume',
+            person: person
+        },
+        {
+            block: 'b-foot'
+        }
+    ]
 })
 
