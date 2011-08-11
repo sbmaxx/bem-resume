@@ -2,66 +2,27 @@ block b-resume {
 
     content: [
         {
-            elem: 'personal-info',
+            block: 'b-resume-personal',
             person: this.ctx.person
         },
         {
-            elem: 'qualification'
+            block: 'b-resume-qualification'
         },
         {
-            elem: 'skills'
+            block: 'b-resume-skills'
         },
         {
-            elem: 'experience'
+            block: 'b-resume-experience'
         },
         {
-            elem: 'projects'
+            block: 'b-resume-projects'
         },
         {
-            elem: 'online-presense'
+            block: 'b-resume-online'
         },
         {
-            elem: 'education'
+            block: 'b-resume-education'
         }
     ]
 
-    elem personal-info {
-
-        content: [
-            {
-                tag: 'h2',
-                content: 'Personal Information'
-            },
-            {
-                elem: 'personal-info-container',
-                data: this.ctx.person['personal-info']
-            }
-        ]
-
-    }
-
-    elem personal-info-container {
-        tag: 'ul',
-        content: [
-            {
-                tag: 'li',
-                content: 'Date of birth: ' + this.ctx.data.birthdate
-            },
-            {
-                tag: 'li',
-                content: 'Location: ' + this.ctx.data.location
-            },
-            {
-                tag: 'li',
-                content: [
-                    'Email: ',
-                    {
-                        block: 'b-link',
-                        url: 'mailto:' + this.ctx.data.email,
-                        content: this.ctx.data.email
-                    }
-                ]
-            }
-        ]
-    }
 }
