@@ -1,6 +1,11 @@
 var person = {
     firstName: 'Roman',
-    lastName: 'Rozhdestvenskiy'
+    lastName: 'Rozhdestvenskiy',
+    'personal-info': {
+        birthdate: 'August 11th, 1986',
+        location: 'Moscow, Russia',
+        email: 'sbmaxx@gmail.com'
+    }
 };
 ({
     block: 'b-page',
@@ -9,7 +14,8 @@ var person = {
     head: [],
     content: [
         {
-            block: 'b-head'
+            block: 'b-head',
+            title: [ person.firstName, person.lastName ].join(' ')
         },
         {
             block: 'b-resume',

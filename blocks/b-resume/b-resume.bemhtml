@@ -27,8 +27,41 @@ block b-resume {
 
     elem personal-info {
 
-        tag: 'h1',
-        content: [ this.ctx.person.firstName, this.ctx.person.lastName ].join(' ')
+        content: [
+            {
+                tag: 'h2',
+                content: 'Personal Information'
+            },
+            {
+                elem: 'personal-info-container',
+                data: this.ctx.person['personal-info']
+            }
+        ]
 
+    }
+
+    elem personal-info-container {
+        tag: 'ul',
+        content: [
+            {
+                tag: 'li',
+                content: 'Date of birth: ' + this.ctx.data.birthdate
+            },
+            {
+                tag: 'li',
+                content: 'Location: ' + this.ctx.data.location
+            },
+            {
+                tag: 'li',
+                content: [
+                    'Email: ',
+                    {
+                        block: 'b-link',
+                        url: 'mailto:' + this.ctx.data.email,
+                        content: this.ctx.data.email
+                    }
+                ]
+            }
+        ]
     }
 }

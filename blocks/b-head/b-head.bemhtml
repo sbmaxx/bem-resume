@@ -1,0 +1,9 @@
+block b-head {
+
+    content: {
+        elem: 'title',
+        content: this.ctx.title
+    }
+
+    elem title, tag: 'h1'
+}
