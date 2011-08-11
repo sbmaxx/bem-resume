@@ -1,0 +1,41 @@
+block b-resume-personal {
+
+    content: [
+        {
+            tag: 'h2',
+            content: 'Personal Information'
+        },
+        {
+            elem: 'container',
+            data: this.ctx.person['personal-info']
+        }
+    ]
+
+    elem container {
+        tag: 'ul',
+        content: [
+            {
+                tag: 'li',
+                content: 'Date of birth: ' + this.ctx.data.birthdate
+            },
+            {
+                tag: 'li',
+                content: 'Location: ' + this.ctx.data.location
+            },
+            {
+                tag: 'li',
+                content: [
+                    'Email: ',
+                    {
+                        block: 'b-link',
+                        url: 'mailto:' + this.ctx.data.email,
+                        content: this.ctx.data.email
+                    }
+                ]
+            }
+        ]
+    }
+
+}
+
+
